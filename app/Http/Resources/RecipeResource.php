@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -13,7 +12,6 @@ class RecipeResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'user_id' => $this->user_id,
             'title' => $this->title,
             'description' => $this->description,
             'ingredients' => $this->ingredients,
@@ -21,6 +19,7 @@ class RecipeResource extends JsonResource
             'avg_min' => $this->avg_min,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'user' => new UserResource($this->user)
         ];
     }
 }
