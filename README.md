@@ -53,6 +53,9 @@ There are 5 endpoint (postman collection is on the root folder `recipe_api_postm
    4. Default get api/recipe/{recipe} example is get api/recipes/1 and if returns "Record not found." probably this record's deleted_at column is not null (removed example). Because data coming from seeder randomly.
 
 Notes:
+
+1. If any error occurs like `Target class does not exists: RecipeController` please run `php artisan route:clear`
+
 What I didn't do:
 1. I didn't add any views.
 2. I didn't put an authentication middleware like `auth:sanctum` because its a demo project. At first I was added but commented later.
