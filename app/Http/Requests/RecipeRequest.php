@@ -10,12 +10,12 @@ class RecipeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required'],
-            'description' => ['nullable'],
-            'ingredients' => ['required'],
-            'instructions' => ['required'],
-            'avg_min' => ['nullable'],
-            'user_id' => ['required', 'exists:App\Models\User,id'],
+            'title' => 'sometimes|required|string',
+            'description' => 'nullable|string',
+            'ingredients' => 'sometimes|required|string',
+            'instructions' => 'sometimes|required|string',
+            'avg_min' => 'nullable|string',
+            'user_id' => 'sometimes|required|exists:App\Models\User,id',
         ];
     }
 
